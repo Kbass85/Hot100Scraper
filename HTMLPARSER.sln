@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTMLPARSER", "HTMLPARSER.csproj", "{88BD4E2F-CA9B-4EDC-A3FD-2DA89551C13F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88BD4E2F-CA9B-4EDC-A3FD-2DA89551C13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88BD4E2F-CA9B-4EDC-A3FD-2DA89551C13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88BD4E2F-CA9B-4EDC-A3FD-2DA89551C13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88BD4E2F-CA9B-4EDC-A3FD-2DA89551C13F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81649C7E-8478-4DA7-A749-7B10BD18991C}
+	EndGlobalSection
+EndGlobal
