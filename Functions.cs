@@ -11,6 +11,7 @@ namespace HTMLPARSER
 {
     public static class Functions
     {
+        static int retries {get; set;}
         public static void ScrapeHot100(string filePath, int startYear, int endYear)
         {
             int year = startYear;
@@ -165,16 +166,26 @@ namespace HTMLPARSER
             catch (Exception ex)
             {
                 Console.WriteLine(artist + "\n" + ex.Message);
+                //retry
+                if (retries == 0)
+                {
+                    retries++;
+                    string[]? keywords = {"and","with",","};
+                    genre = GetGenreFromAllMusic(artist.Split(keywords,2,0)[0]);
+                    return genre;
+                }
+                
             }
             Thread.Sleep(100);
+            retries = 0;
             return genre;
         }
 
-        public static void AppendGenreToCSV()
+        public static void AppendGenreToCSV(string sourcePath, string destinationPath )
         {
-            using (TextFieldParser parser = new TextFieldParser(@"C:\Users\kbass\Documents\Billboard_1946_2021.csv"))
+            using (TextFieldParser parser = new TextFieldParser(sourcePath))
             {
-                var file = File.AppendText(@"C:\Users\kbass\Documents\Billboard_1946_2021_Genres_SubGenres_AllMusic.csv");
+                var file = File.AppendText(destinationPath);
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(",");
                 while (!parser.EndOfData)
